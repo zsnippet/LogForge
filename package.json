@@ -1,0 +1,27 @@
+{
+  "name": "logforge",
+  "version": "1.0.0",
+  "description": "Forge efficient log management with LogForge. Streamline error tracking, debugging, and insights into your application. Powerful tools for creating, managing logs, and an intuitive dashboard for seamless integration.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "zsnippet",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.30.1"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zsnippet/LogForge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zsnippet/LogForge/issues"
+  },
+  "homepage": "https://github.com/zsnippet/LogForge#readme"
+}
