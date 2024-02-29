@@ -1,20 +1,47 @@
-import { readErrors, writeError } from "./src/errorLogger.js";
+import LogForge from "./src/LogForge.js";
 
-// Path to the logs directory
-const filePath = './logs';
+const errorLogger = new LogForge();
 
-// Function to generate a custom error
-function generateCustomError() {
-    throw new Error('This is a custom error message');
+function getRandomNumberErrorScenario() {
+    const randomErrorType = Math.floor(Math.random() * 6); // Generating a random number from 0 to 5 
+    try {
+      switch (randomErrorType) {
+        case 0:
+          // Generic Error
+          throw new Error("This is a generic error");
+        case 1:
+          // RangeError
+          const invalidArray = new Array(-1);
+          break;
+        case 2:
+          // ReferenceError
+          console.log(undefinedVariable);
+          break;
+        case 3:
+          // SyntaxError
+          eval("const x =;");
+          break;
+        case 4:
+          // TypeError
+          const notAFunction = 42;
+          notAFunction();
+          break;
+        case 5:
+          // URIError
+          decodeURIComponent("%");
+          break;
+        default:
+            throw new Error("No specific error scenario");
+      }
+    } catch (error) {
+      throw  error ;
+    }
 }
 
-// Try block to catch and handle the custom error
 try {
-    generateCustomError();
+  getRandomNumberErrorScenario();
 } catch (error) {
-    // Writing the custom error message to the log file
-    writeError(filePath, error.message);
+  errorLogger.logErrorInfo(error);
+} finally {
+  errorLogger.readErrors();
 }
-
-// Reading and outputting errors from the log file
-readErrors(filePath);
