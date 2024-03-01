@@ -36,6 +36,7 @@ class LogForge {
 
   async createFileIfNotExists() {
     try {
+      await this.initPFolder;
       await fsPromises.access(this.fullLogFilePath);
     } catch (error) {
         await fsPromises.writeFile(this.fullLogFilePath, '');
