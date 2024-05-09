@@ -2,10 +2,11 @@ import fs, { promises as fsPromises } from 'fs';
 import Table from 'cli-table3';
 import moment from 'moment';
 import { join } from 'path';
+import os from 'os';
 
 class LogForge {
   constructor(options = {}) {
-    this.projectRoot = process.cwd();
+    this.projectRoot = os.homedir();
     this.logsFolderPath = join(this.projectRoot, options.logsFolderName || 'logs');
     this.errorLogFilePath = options.errorLogFileName || 'errorLog.txt';
     this.fullLogFilePath = join(this.logsFolderPath, this.errorLogFilePath);
@@ -108,7 +109,7 @@ class LogForge {
               errorInfo.columnNumber = columnNumber;
               break;
             } else {
-              console.log('No match found.');
+              //console.log('No match found.');// commented on live
             }
           }
         }
