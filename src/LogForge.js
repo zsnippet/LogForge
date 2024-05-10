@@ -1,8 +1,10 @@
-import fs, { promises as fsPromises } from 'fs';
-import Table from 'cli-table3';
-import moment from 'moment';
-import { join } from 'path';
-import os from 'os';
+const fs = require('fs');
+const fsPromises = fs.promises;
+const Table = require('cli-table3');
+const moment = require('moment');
+const path = require('path');
+const os = require('os');
+const join = path.join;
 
 class LogForge {
   constructor(options = {}) {
@@ -123,4 +125,4 @@ class LogForge {
   }
 }
 
-export default LogForge;
+module.exports = LogForge;

@@ -1,4 +1,4 @@
-import LogForge from "../index.js";
+const LogForge = require("../index.js");
 
 const errorLogger = new LogForge();
 

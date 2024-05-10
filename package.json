@@ -1,8 +1,7 @@
 {
   "name": "logforge",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Forge efficient log management with LogForge. Streamline error tracking, debugging, and insights into your application. Powerful tools for creating, managing logs, and an intuitive dashboard for seamless integration.",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

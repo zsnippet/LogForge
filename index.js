@@ -1,1 +1,1 @@
-export { default } from "./src/LogForge.js";
+module.exports = require("./src/LogForge.js");
